@@ -8,5 +8,5 @@ CREATE DATABASE final OWNER member;
 
 ##GETTING INTO DATABASE:
 
-psql final \member
+psql -d final -U member
 (it will ask you for the password which is member)
