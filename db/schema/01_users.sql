@@ -23,7 +23,7 @@ CREATE TABLE requirements (
   title VARCHAR(255) NOT NULL,
   education VARCHAR(255) NOT NULL,
   experience INTEGER NOT NULL,
-  opportunity VARCHAR(255) NOT NULL,
+  opportunity VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE careers (
@@ -33,7 +33,7 @@ CREATE TABLE careers (
   title VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
   salary INTEGER NOT NULL,
-  outlook VARCHAR(255) NOT NULL,
+  outlook VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE favourites (

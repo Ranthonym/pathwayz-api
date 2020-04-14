@@ -3,7 +3,7 @@ var cors = require("cors");
 const app = express();
 const port = 3001;
 
-const merchant_model = require("./merchant_model");
+const user_model = require("./user_model");
 
 app.use(cors());
 
@@ -19,8 +19,8 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  merchant_model
-    .getMerchants()
+  user_model
+    .getUsers()
     .then((response) => {
       res.status(200).json(response);
     })
@@ -29,9 +29,9 @@ app.get("/", (req, res) => {
     });
 });
 
-app.post("/merchants", (req, res) => {
-  merchant_model
-    .createMerchant(req.body)
+app.post("/users", (req, res) => {
+  user_model
+    .createUser(req.body)
     .then((response) => {
       res.status(200).send(response);
     })
@@ -40,9 +40,10 @@ app.post("/merchants", (req, res) => {
     });
 });
 
-app.delete("/merchants/:id", (req, res) => {
-  merchant_model
-    .deleteMerchant(req.params.id)
+app.delete("/users/:id", (req, res) => {
+  console.log(req.params.id);
+  user_model
+    .deleteUser(req.params.id)
     .then((response) => {
       res.status(200).send(response);
     })
