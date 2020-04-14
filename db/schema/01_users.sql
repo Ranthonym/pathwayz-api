@@ -41,7 +41,7 @@ CREATE TABLE programs (
   title VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
   grades VARCHAR(255) NOT NULL,
-  courses VARCHAR(255) NOT NULL
+  courses text ARRAY NOT NULL
 );
 
 CREATE TABLE careers (
