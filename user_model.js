@@ -1,4 +1,5 @@
 const Pool = require("pg").Pool;
+
 const pool = new Pool({
   user: "member",
   host: "localhost",
@@ -7,9 +8,9 @@ const pool = new Pool({
   port: 5432,
 });
 
-const getMerchants = () => {
+const getUsers = () => {
   return new Promise(function (resolve, reject) {
-    pool.query("SELECT * FROM merchants ORDER BY id ASC", (error, results) => {
+    pool.query("SELECT * FROM users ORDER BY id ASC", (error, results) => {
       if (error) {
         reject(error);
       }
@@ -17,12 +18,13 @@ const getMerchants = () => {
     });
   });
 };
-const createMerchant = (body) => {
+
+const createUser = (body) => {
   return new Promise(function (resolve, reject) {
-    const { name, email } = body;
+    const { name, email, password } = body;
     pool.query(
-      "INSERT INTO merchants (name, email) VALUES ($1, $2) RETURNING *",
-      [name, email],
+      "INSERT INTO users (name, email,password) VALUES ($1, $2, $3) RETURNING *",
+      [name, email, password],
       (error, results) => {
         if (error) {
           reject(error);
@@ -32,24 +34,20 @@ const createMerchant = (body) => {
     );
   });
 };
-const deleteMerchant = () => {
+
+const deleteUser = (id) => {
   return new Promise(function (resolve, reject) {
-    const id = parseInt(request.params.id);
-    pool.query(
-      "DELETE FROM merchants WHERE id = $1",
-      [id],
-      (error, results) => {
-        if (error) {
-          reject(error);
-        }
-        resolve(`Merchant deleted with ID: ${id}`);
+    pool.query("DELETE FROM users WHERE id = $1", [id], (error, results) => {
+      if (error) {
+        reject(error);
       }
-    );
+      resolve(`User deleted with ID: ${id}`);
+    });
   });
 };
 
 module.exports = {
-  getMerchants,
-  createMerchant,
-  deleteMerchant,
+  getUsers,
+  createUser,
+  deleteUser,
 };
