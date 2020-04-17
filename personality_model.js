@@ -19,7 +19,22 @@ const getPersonalities = () => {
   });
 };
 
-const getCareersFromPersonalities = (resultid) => {
+const getPersonalitiesTopCareers = (resultid) => {
+  return new Promise(function (resolve, reject) {
+    pool.query(
+      "SELECT * FROM careers WHERE result_id = $1",
+      [resultid],
+      (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(results.rows);
+      }
+    );
+  });
+};
+
+const getCareerRequirementsForPersonalities = (resultid) => {
   return new Promise(function (resolve, reject) {
     pool.query(
       "SELECT * FROM careers JOIN requirements ON careers.requirement_id = requirements.id WHERE result_id = $1",
@@ -34,7 +49,24 @@ const getCareersFromPersonalities = (resultid) => {
   });
 };
 
+const getProgramsForCareer = (requirementid) => {
+  return new Promise(function (resolve, reject) {
+    pool.query(
+      "SELECT * FROM programs WHERE requirement_id = $1",
+      [requirementid],
+      (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(results.rows);
+      }
+    );
+  });
+};
+
 module.exports = {
   getPersonalities,
-  getCareersFromPersonalities,
+  getCareerRequirementsForPersonalities,
+  getProgramsForCareer,
+  getPersonalitiesTopCareers,
 };
