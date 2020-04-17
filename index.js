@@ -4,6 +4,7 @@ const app = express();
 const port = 3001;
 
 const user_model = require("./user_model");
+const personality_model = require("./personality_model");
 
 app.use(cors());
 
@@ -23,6 +24,27 @@ app.get("/", (req, res) => {
     .getUsers()
     .then((response) => {
       res.status(200).json(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get("/personalities", (req, res) => {
+  personality_model
+    .getPersonalities()
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+app.get("/personalities/:id", (req, res) => {
+  personality_model
+    .getCareersFromPersonalities(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
     })
     .catch((error) => {
       res.status(500).send(error);

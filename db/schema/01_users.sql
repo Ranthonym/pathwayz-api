@@ -30,9 +30,8 @@ CREATE TABLE results (
 CREATE TABLE requirements (
   id SERIAL PRIMARY KEY NOT NULL,
   title VARCHAR(255) NOT NULL,
-  education VARCHAR(255) NOT NULL,
-  experience INTEGER NOT NULL,
-  opportunity VARCHAR(255) NOT NULL
+  education VARCHAR(900) NOT NULL,
+  years INTEGER NOT NULL
 );
 
 CREATE TABLE programs (
@@ -49,7 +48,7 @@ CREATE TABLE careers (
   result_id INTEGER REFERENCES results(id) ON DELETE CASCADE,
   requirement_id INTEGER REFERENCES requirements(id) ON DELETE CASCADE,
   title VARCHAR(255) NOT NULL,
-  description VARCHAR(255) NOT NULL,
+  description VARCHAR(500) NOT NULL,
   salary INTEGER NOT NULL,
   outlook VARCHAR(255) NOT NULL
 );
@@ -84,7 +83,7 @@ CREATE TABLE messages (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   conversation_id INTEGER REFERENCES conversations(id) ON DELETE CASCADE,
   message VARCHAR(255) NOT NULL,
-  timestamp TIME NOT NULL
+  timestamp TIME 
 );
 
 CREATE TABLE questions (
