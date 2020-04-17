@@ -40,9 +40,31 @@ app.get("/personalities", (req, res) => {
       res.status(500).send(error);
     });
 });
+app.get("/personalities/:id/requirements", (req, res) => {
+  personality_model
+    .getCareerRequirementsForPersonalities(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
 app.get("/personalities/:id", (req, res) => {
   personality_model
-    .getCareersFromPersonalities(req.params.id)
+    .getPersonalitiesTopCareers(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get("/programs/:id", (req, res) => {
+  personality_model
+    .getProgramsForCareer(req.params.id)
     .then((response) => {
       res.status(200).send(response);
     })

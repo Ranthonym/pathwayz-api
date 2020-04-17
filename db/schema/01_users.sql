@@ -38,9 +38,8 @@ CREATE TABLE programs (
   id SERIAL PRIMARY KEY NOT NULL,
   requirement_id INTEGER REFERENCES requirements(id) ON DELETE CASCADE,
   title VARCHAR(255) NOT NULL,
-  description VARCHAR(255) NOT NULL,
-  grades VARCHAR(255) NOT NULL,
-  courses text ARRAY NOT NULL
+  grade_average VARCHAR(255) NOT NULL,
+  required_courses text ARRAY NOT NULL
 );
 
 CREATE TABLE careers (

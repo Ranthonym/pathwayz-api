@@ -41,7 +41,7 @@ understanding of what needs to get done.');
 
 INSERT INTO requirements (title,education,years) VALUES ('University Professor Employment Requirements' , 'A doctoral degree in the field of specialization is required for university professors. A masters degree in the field of specialization is required for university lecturers. Licences or professional certification may be required for professors teaching future practitioners in certain professionally regulated fields, such as medicine, engineering, architecture, psychology or law.' , 8);
 
-INSERT INTO requirements (title,education,years) VALUES ('Computer Consultant Employment Requirements' , 'A bachelors degree in computer science, computer systems engineering, software engineering, business administration or a related discipline or Completion of a college program in computer science is usually required.
+INSERT INTO requirements (title,education,years) VALUES ('Software Consultant Employment Requirements' , 'A bachelors degree in computer science, computer systems engineering, software engineering, business administration or a related discipline or Completion of a college program in computer science is usually required.
 Experience as a computer programmer is usually required. 
 Certification or training provided by software vendors may be required by some employers.' , 4);
 
@@ -58,12 +58,27 @@ Membership in good standing with a provincial or territorial law society or bar 
 Judges are appointed by federal or provincial cabinets.
 Those appointed to more senior positions in a court, such as chief justice, usually have experience as judges in that court.' , 8);
 
-INSERT INTO requirements (title,education,years) VALUES ('Executive Director Requirements' , 'A university degree in business administration, commerce, computer science or other discipline related to the service provided is usually required.
+INSERT INTO requirements (title,education,years) VALUES ('Executive Director Employment Requirements' , 'A university degree in business administration, commerce, computer science or other discipline related to the service provided is usually required.
 Several years of experience as a middle manager in financial, communications or other business services are usually required.
 Specialization in a particular functional area or service is possible through specific university training in that area or through previous experience.
 Senior managers in finance usually require a professional accounting designation.' , 5);
 
-INSERT INTO programs (requirement_id, title, description, grades,courses) VALUES (1, 'Program Title', 'Program Description', 'Program Grades', ARRAY['Science','Math', 'English']);
+
+INSERT INTO programs (requirement_id, title, grade_average, required_courses) VALUES (2, 'Ryerson University - Business Technology Management', 'High 70s, Mid 80s', ARRAY['English (ENG4U/EAE4U preferred)', 'Mathematics: One of Advanced Functions (MHF4U), Calculus and Vectors (MCV4U) or Mathematics of Data Management (MDM4U)','Grade 12 U Calculus and Vectors (MCV4U) is the preferred Mathematics course.']);
+
+INSERT INTO programs (requirement_id, title, grade_average, required_courses) VALUES (2, 'Mohawk College - Computer Systems Technician: Software Support', 'N/A', ARRAY['Grade 12 English, C or U or equivalent', 'Grade 12 Mathematics, MAP4C ≥ 60%; or MCT4C; or any U or equivalent']);
+
+INSERT INTO programs (requirement_id, title, grade_average, required_courses) VALUES (2, 'University of Toronto - Computer Science (Major, Minor, Specialist)', 'Low 90s, High 80s', ARRAY['Calculus & Vectors (MCV4U)', 'English (ENG4U)']);
+
+INSERT INTO programs (requirement_id, title, grade_average, required_courses) VALUES (2, 'triOS College - Information Technology Professional Diploma', 'N/A', ARRAY['High School Graduation Diploma or Mature Student Status (18 years of age and academic achievement assessment passed).']);
+
+INSERT INTO programs (requirement_id, title, grade_average, required_courses) VALUES (2, 'University of Waterloo - Business Administration (Laurier) and Computer Science (Waterloo) Double Degree', 'Mid 90s', ARRAY['Advanced Functions', 'Calculus and Vectors', 'Any Grade 12 U English','One other 4U course','Recommended course: Grade 11 U Introduction to Computer Science']);
+
+INSERT INTO programs (requirement_id, title, grade_average, required_courses) VALUES (2, 'McMaster University - Engineering', 'High 80s', ARRAY['ENG4U', 'MCV4U', 'SCH4U', 'SPH4U']);
+
+
+
+
 
 
 INSERT INTO careers (result_id, requirement_id, title,description,salary,outlook) VALUES (16,1,'University Professor', 'University professors and lecturers teach courses to undergraduate and graduate students and conduct research at universities. University professors can also be head of departments.', 49.57, 'Good');
