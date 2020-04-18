@@ -39,13 +39,13 @@ INSERT INTO results (title, description) VALUES ('Extravert | Intuitive | Thinki
 understanding of what needs to get done.');
 
 
-INSERT INTO requirements (title,education,years) VALUES ('University Professor Employment Requirements' , 'A doctoral degree in the field of specialization is required for university professors. A masters degree in the field of specialization is required for university lecturers. Licences or professional certification may be required for professors teaching future practitioners in certain professionally regulated fields, such as medicine, engineering, architecture, psychology or law.' , 8);
+INSERT INTO requirements (title,education,years) VALUES ('University Professor' , 'A doctoral degree in the field of specialization is required for university professors. A masters degree in the field of specialization is required for university lecturers. Licences or professional certification may be required for professors teaching future practitioners in certain professionally regulated fields, such as medicine, engineering, architecture, psychology or law.' , 8);
 
-INSERT INTO requirements (title,education,years) VALUES ('Software Consultant Employment Requirements' , 'A bachelors degree in computer science, computer systems engineering, software engineering, business administration or a related discipline or Completion of a college program in computer science is usually required.
+INSERT INTO requirements (title,education,years) VALUES ('Software Consultant' , 'A bachelors degree in computer science, computer systems engineering, software engineering, business administration or a related discipline or Completion of a college program in computer science is usually required.
 Experience as a computer programmer is usually required. 
 Certification or training provided by software vendors may be required by some employers.' , 4);
 
-INSERT INTO requirements (title,education,years) VALUES ('Credit Consultant Employment Requirements' , 'Completion of secondary school and extensive general banking experience is usually required.
+INSERT INTO requirements (title,education,years) VALUES ('Credit Consultant' , 'Completion of secondary school and extensive general banking experience is usually required.
 A bachelors degree or college diploma related to commerce or economics may be required.
 A mutual funds license is usually required.
 Registration with the securities regulatory authority in the province or territory of employment is usually required.
@@ -53,12 +53,12 @@ Completion of a loan or credit training program, ranging from six to twelve mont
 Various training programs and courses are offered by the Institute of Canadian Bankers and may be required by employers.
 Financial services officers who sell regulated financial products and investments are required to be licensed by the appropriate governing body.' , 2);
 
-INSERT INTO requirements (title,education,years) VALUES ('Judge Employment Requirements' , 'Extensive experience as a lawyer or as a professor of law with continuous membership in the bar association is usually required.
+INSERT INTO requirements (title,education,years) VALUES ('Judge' , 'Extensive experience as a lawyer or as a professor of law with continuous membership in the bar association is usually required.
 Membership in good standing with a provincial or territorial law society or bar association is required.
 Judges are appointed by federal or provincial cabinets.
 Those appointed to more senior positions in a court, such as chief justice, usually have experience as judges in that court.' , 8);
 
-INSERT INTO requirements (title,education,years) VALUES ('Executive Director Employment Requirements' , 'A university degree in business administration, commerce, computer science or other discipline related to the service provided is usually required.
+INSERT INTO requirements (title,education,years) VALUES ('Executive Director' , 'A university degree in business administration, commerce, computer science or other discipline related to the service provided is usually required.
 Several years of experience as a middle manager in financial, communications or other business services are usually required.
 Specialization in a particular functional area or service is possible through specific university training in that area or through previous experience.
 Senior managers in finance usually require a professional accounting designation.' , 5);
