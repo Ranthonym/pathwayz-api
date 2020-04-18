@@ -2,9 +2,23 @@ const express = require("express");
 var cors = require("cors");
 const app = express();
 const port = 3001;
-
+const socket = require("socket.io");
 const user_model = require("./user_model");
 const personality_model = require("./personality_model");
+
+//Creating server for chat
+//When the server starts listening on port 3001 then fire a callbak function
+// The callback function will console.log a string
+//const server = app.listen(3001, function () {//
+console.log("Listening to requests on port 3001");
+//});
+
+// serve a static file to the browser
+app.use(express.static("public"));
+
+//Socket setup
+//passing const server to the socket function and assigning it to const io
+//essentially now socket.IO will work on this server just created
 
 app.use(cors());
 
@@ -95,6 +109,8 @@ app.delete("/users/:id", (req, res) => {
       res.status(500).send(error);
     });
 });
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`);
-});
+
+// const server = app.listen(port, () => {
+//   console.log(`App running on port ${port}.`);
+// });
+// const io = socket(server);
