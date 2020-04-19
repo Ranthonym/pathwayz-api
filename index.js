@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
 });
 app.get("/messages", (req, res) => {
   message_model
-    .getMessagesFromConversation(1)
+    .getMessagesFromConversation()
     .then((response) => {
       res.status(200).json(response);
     })
