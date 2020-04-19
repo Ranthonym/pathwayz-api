@@ -1,6 +1,7 @@
 -- Users table seeds here (Example)
-INSERT INTO users (name, email, password) VALUES ('Alice','alice@example.com', 'password');
-INSERT INTO users (name, email, password) VALUES ('Kira', 'kira@example.com', 'password');
+INSERT INTO users (name, email, password) VALUES ('Asma','alice@example.com', 'password');
+INSERT INTO users (name, email, password) VALUES ('Rahul', 'kira@example.com', 'password');
+INSERT INTO users (name, email, password) VALUES ('Raho', 'kira@example.com', 'password');
 
 
 
@@ -96,13 +97,20 @@ INSERT INTO attempts (user_id,result_id) VALUES (1,1);
 INSERT INTO favourites (user_id,career_id) VALUES (1,1);
 
 INSERT INTO mentors (user_id,career_id) VALUES (2,1);
+INSERT INTO mentors (user_id,career_id) VALUES (3,1);
 
 INSERT INTO conversations (user_id,mentor_id) VALUES (1,1);
+INSERT INTO conversations (user_id,mentor_id) VALUES (1,2);
 
 INSERT INTO messages (user_id, conversation_id, message) VALUES (1,1,'Hello Asma');
 INSERT INTO messages (user_id, conversation_id, message) VALUES (2,1,'Hey Rahul');
 INSERT INTO messages (user_id, conversation_id, message) VALUES (1,1,'How is your day Asma');
 INSERT INTO messages (user_id, conversation_id, message) VALUES (2,1,'Its going great actually! Hbu?');
+
+INSERT INTO messages (user_id, conversation_id, message) VALUES (1,2,'wassuppp Asma');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (3,2,'Hey Raho');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (1,2,'Did you finish your part??');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (3,2,'Yea, Hbu?');
 
 
 

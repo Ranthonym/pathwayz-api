@@ -8,19 +8,14 @@ const pool = new Pool({
   port: 5432,
 });
 
-const getMessagesFromConversation = (conversationid) => {
-  conversation_id = 1;
+const getMessagesFromConversation = () => {
   return new Promise(function (resolve, reject) {
-    pool.query(
-      "SELECT * FROM messages WHERE conversation_id = $1;",
-      [conversationid],
-      (error, results) => {
-        if (error) {
-          reject(error);
-        }
-        resolve(results.rows);
+    pool.query("SELECT * FROM messages;", (error, results) => {
+      if (error) {
+        reject(error);
       }
-    );
+      resolve(results.rows);
+    });
   });
 };
 
