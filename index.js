@@ -5,6 +5,7 @@ const port = 3001;
 const socket = require("socket.io");
 const user_model = require("./user_model");
 const personality_model = require("./personality_model");
+const message_model = require("./message_model");
 
 //Creating server for chat
 //When the server starts listening on port 3001 then fire a callbak function
@@ -36,6 +37,16 @@ app.use(function (req, res, next) {
 app.get("/", (req, res) => {
   user_model
     .getUsers()
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+app.get("/messages", (req, res) => {
+  message_model
+    .getMessagesFromConversation(1)
     .then((response) => {
       res.status(200).json(response);
     })
