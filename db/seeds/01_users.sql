@@ -94,11 +94,17 @@ INSERT INTO careers (result_id, requirement_id, title,description,salary,outlook
 INSERT INTO attempts (user_id,result_id) VALUES (1,1);
 
 INSERT INTO favourites (user_id,career_id) VALUES (1,1);
-INSERT INTO mentors (user_id,career_id) VALUES (1,1);
+
+INSERT INTO mentors (user_id,career_id) VALUES (2,1);
 
 INSERT INTO conversations (user_id,mentor_id) VALUES (1,1);
 
-INSERT INTO messages (user_id, conversation_id, message) VALUES (1,1,'Message content');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (1,1,'Hello Asma');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (2,1,'Hey Rahul');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (1,1,'How is your day Asma');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (2,1,'Its going great actually! Hbu?');
+
+
 
 INSERT INTO questions (content) VALUES ('Question content');
 
