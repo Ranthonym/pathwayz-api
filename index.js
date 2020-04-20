@@ -6,6 +6,7 @@ const port = 3001;
 const user_model = require("./user_model");
 const personality_model = require("./personality_model");
 const message_model = require("./message_model");
+const favourite_model = require("./favourite_model");
 
 app.use(cors());
 
@@ -76,6 +77,28 @@ app.get("/personalities/:id", (req, res) => {
 app.get("/programs/:id", (req, res) => {
   personality_model
     .getProgramsForCareer(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get("/favourites", (req, res) => {
+  favourite_model
+    .getFavourites()
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.post("/favourites", (req, res) => {
+  favourite_model
+    .createFavourite(req.body)
     .then((response) => {
       res.status(200).send(response);
     })
