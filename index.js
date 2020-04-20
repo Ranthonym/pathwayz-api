@@ -157,9 +157,9 @@ app.delete("/users/:id", (req, res) => {
 io.on("connection", (socket) => {
   const { id } = socket.client;
   // When the client connects, they are sent a message
-  socket.emit("message", "You are connected!");
+  // socket.emit("message", "You are connected!");
   // The other clients are told that someone new has arrived
-  socket.broadcast.emit("message", "Another client has just connected!");
+  // socket.broadcast.emit("message", "Another client has just connected!");
 
   console.log(`User connected: ${id}`);
   // socket.on("chat message", (msg) => {
@@ -176,9 +176,11 @@ io.on("connection", (socket) => {
     console.log(
       socket.username + " is speaking to me! They're saying: " + message
     );
+
+    //add user:message object code here
     socket.broadcast.emit("message", message);
   });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Listen on *: ${PORT}`));
