@@ -20,10 +20,10 @@ const getFavourites = () => {
 };
 const createFavourite = (body) => {
   return new Promise(function (resolve, reject) {
-    const { career_id } = body;
+    const { user_id, career_id } = body;
     pool.query(
       "INSERT INTO favourites (user_id,career_id) VALUES ($1,$2) RETURNING *",
-      [userid, career_id],
+      [user_id, career_id],
       (error, results) => {
         if (error) {
           reject(error);
