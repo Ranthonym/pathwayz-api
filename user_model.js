@@ -1,5 +1,5 @@
 const Pool = require("pg").Pool;
-
+console.log(process.env);
 const pool = new Pool({
   user: "member",
   host: "localhost",
@@ -14,6 +14,7 @@ const getUsers = () => {
       if (error) {
         reject(error);
       }
+      console.log(results);
       resolve(results.rows);
     });
   });
