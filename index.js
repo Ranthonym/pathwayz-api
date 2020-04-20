@@ -97,6 +97,7 @@ app.get("/favourites", (req, res) => {
 });
 
 app.post("/favourites", (req, res) => {
+  console.log(req.body);
   favourite_model
     .createFavourite(req.body)
     .then((response) => {
