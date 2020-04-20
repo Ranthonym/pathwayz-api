@@ -1,8 +1,10 @@
 const express = require("express");
 var cors = require("cors");
 const app = express();
-const port = 3001;
-const socket = require("socket.io");
+// const port = 3001;
+// const socket = require("socket.io");
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
 const user_model = require("./user_model");
 const personality_model = require("./personality_model");
 const message_model = require("./message_model");
@@ -11,7 +13,7 @@ const message_model = require("./message_model");
 //When the server starts listening on port 3001 then fire a callbak function
 // The callback function will console.log a string
 //const server = app.listen(3001, function () {//
-console.log("Listening to requests on port 3001");
+// console.log("Listening to requests on port 3001");
 //});
 
 // serve a static file to the browser
@@ -121,7 +123,38 @@ app.delete("/users/:id", (req, res) => {
     });
 });
 
+//------------------------------------code for live chat via sockets-----------------------------------------------
+
 // const server = app.listen(port, () => {
 //   console.log(`App running on port ${port}.`);
 // });
 // const io = socket(server);
+
+io.on("connection", (socket) => {
+  const { id } = socket.client;
+  // When the client connects, they are sent a message
+  socket.emit("message", "You are connected!");
+  // The other clients are told that someone new has arrived
+  socket.broadcast.emit("message", "Another client has just connected!");
+
+  console.log(`User connected: ${id}`);
+  // socket.on("chat message", (msg) => {
+  //   console.log(`${id}: ${msg}`);
+  // });
+
+  // As soon as the username is received, it's stored as a session variable
+  socket.on("session", function (username) {
+    socket.username = username;
+  });
+  // When a "message" is received (click on the button), it's logged in the console
+  socket.on("message", function (message) {
+    // The username of the person who clicked is retrieved from the session variables
+    console.log(
+      socket.username + " is speaking to me! They're saying: " + message
+    );
+    socket.broadcast.emit("message", message);
+  });
+});
+
+const PORT = process.env.PORT || 3001;
+server.listen(PORT, () => console.log(`Listen on *: ${PORT}`));
