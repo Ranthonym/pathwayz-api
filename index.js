@@ -59,6 +59,18 @@ app.get("/messages", (req, res) => {
     });
 });
 
+app.post("/messages", (req, res) => {
+  console.log(req.body);
+  message_model
+    .createMessage(req.body)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
 app.get("/personalities", (req, res) => {
   personality_model
     .getPersonalities()
