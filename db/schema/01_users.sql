@@ -34,6 +34,7 @@ CREATE TABLE requirements (
   years INTEGER NOT NULL
 );
 
+-- add description and courses 
 CREATE TABLE programs (
   id SERIAL PRIMARY KEY NOT NULL,
   requirement_id INTEGER REFERENCES requirements(id) ON DELETE CASCADE,

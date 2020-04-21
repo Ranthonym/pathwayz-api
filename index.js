@@ -10,6 +10,7 @@ const user_model = require("./user_model");
 const personality_model = require("./personality_model");
 const message_model = require("./message_model");
 const favourite_model = require("./favourite_model");
+const career_model = require("./career_model");
 
 //Creating server for chat
 //When the server starts listening on port 3001 then fire a callbak function
@@ -81,6 +82,18 @@ app.get("/personalities", (req, res) => {
       res.status(500).send(error);
     });
 });
+
+app.get("/careers", (req, res) => {
+  career_model
+    .getCareers()
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
 app.get("/personalities/:id/requirements", (req, res) => {
   personality_model
     .getCareerRequirementsForPersonalities(req.params.id)
