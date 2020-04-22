@@ -139,7 +139,7 @@ INSERT INTO mentors (user_id,career_id) VALUES (3,1);
 INSERT INTO conversations (user_id,mentor_id) VALUES (1,1);
 INSERT INTO conversations (user_id,mentor_id) VALUES (1,2);
 
-INSERT INTO messages (user_id, conversation_id, message) VALUES (2,1,'Hello Asma');
+
 
 
 
