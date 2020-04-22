@@ -143,10 +143,10 @@ INSERT INTO conversations (user_id,mentor_id) VALUES (1,2);
 
 
 
-INSERT INTO messages (user_id, conversation_id, message) VALUES (3,2,'wassuppp Asma');
-INSERT INTO messages (user_id, conversation_id, message) VALUES (1,2,'Hey Raho');
-INSERT INTO messages (user_id, conversation_id, message) VALUES (3,2,'Did you finish your part??');
-INSERT INTO messages (user_id, conversation_id, message) VALUES (1,2,'Yea, Hbu?');
+
+INSERT INTO messages (user_id, conversation_id, message) VALUES (1,2,'Hey Mentor');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (3,2,'Hey, Asmaa! How can I help you?');
+INSERT INTO messages (user_id, conversation_id, message) VALUES (1,2,'Im nervous, wondering what careers are out there for me in tech?');
 
 
 
