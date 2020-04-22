@@ -39,11 +39,7 @@ CREATE TABLE programs (
   id SERIAL PRIMARY KEY NOT NULL,
   requirement_id INTEGER REFERENCES requirements(id) ON DELETE CASCADE,
   title VARCHAR(255) NOT NULL,
-<<<<<<< HEAD
   description VARCHAR(600) NOT NULL,
-=======
-  description VARCHAR(255) NOT NULL,
->>>>>>> b1773cc6f1e1b995f21ea85bf0443ada4e3aaa9a
   required_courses text ARRAY NOT NULL,
   grade_average VARCHAR(255) NOT NULL,
   courses VARCHAR(255) NOT NULL
