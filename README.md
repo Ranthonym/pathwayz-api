@@ -30,7 +30,7 @@ A full stack React app that evaluates user personalities and provides career gui
 
 Install dependencies with `npm install`.
 
-#API data for PathWayz App
+## API data for PathWayz App
 
 Refer to db folder
 
